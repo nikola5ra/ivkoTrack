@@ -68,121 +68,126 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           if (_showData)
             Center(
-                child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(24, 0, 24, 60),
-                  child: Text(
-                    _scripResponse?.message ?? '',
-                    style: const TextStyle(fontSize: 22),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                //
-                // Employee and asses data
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      //
-                      // Asset id
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 16),
-                        child: RichText(
-                          text: TextSpan(
-                            text: "Asset ID:\n",
-                            style: const TextStyle(
-                                color: Colors.black, fontSize: 22),
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: _assetId ?? '',
-                                  style: const TextStyle(color: Colors.green)),
-                            ],
-                          ),
-                        ),
-                      ),
-                      //
-                      // Employee name
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 16),
-                        child: RichText(
-                          text: TextSpan(
-                            text: "Name:\n",
-                            style: const TextStyle(
-                                color: Colors.black, fontSize: 22),
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: _scripResponse?.name ?? '',
-                                  style: const TextStyle(color: Colors.green)),
-                            ],
-                          ),
-                        ),
-                      ),
-                      //
-                      // Asset model
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 16),
-                        child: RichText(
-                          text: TextSpan(
-                            text: "Model:\n",
-                            style: const TextStyle(
-                                color: Colors.black, fontSize: 22),
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: _scripResponse?.model ?? '',
-                                  style: const TextStyle(color: Colors.green)),
-                            ],
-                          ),
-                        ),
-                      ),
-                      //
-                      // Asset serial number
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 16),
-                        child: RichText(
-                          text: TextSpan(
-                            text: "Serial number:\n",
-                            style: const TextStyle(
-                                color: Colors.black, fontSize: 22),
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: _scripResponse?.serialNumber ?? '',
-                                  style: const TextStyle(color: Colors.green)),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                //
-                // Scan again
-                Padding(
-                  padding: const EdgeInsets.only(top: 40),
-                  child: Center(
-                    child: TextButton(
-                      child: const Text(
-                        'Scan again',
-                        style: TextStyle(fontSize: 24),
-                      ),
-                      onPressed: () {
-                        setState(
-                          () {
-                            _showQRScanner = true;
-                            _showData = false;
-                          },
-                        );
-                      },
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(24, 0, 24, 60),
+                    child: Text(
+                      _scripResponse?.message ?? '',
+                      style: const TextStyle(fontSize: 22),
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                )
-              ],
-            ))
+                  //
+                  // Employee and asses data
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        //
+                        // Asset id
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 16),
+                          child: RichText(
+                            text: TextSpan(
+                              text: "Asset ID:\n",
+                              style: const TextStyle(
+                                  color: Colors.black, fontSize: 22),
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: _assetId ?? '',
+                                  style: const TextStyle(color: Colors.green),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        //
+                        // Employee name
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 16),
+                          child: RichText(
+                            text: TextSpan(
+                              text: "Name:\n",
+                              style: const TextStyle(
+                                  color: Colors.black, fontSize: 22),
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: _scripResponse?.name ?? '',
+                                  style: const TextStyle(color: Colors.green),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        //
+                        // Asset model
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 16),
+                          child: RichText(
+                            text: TextSpan(
+                              text: "Model:\n",
+                              style: const TextStyle(
+                                  color: Colors.black, fontSize: 22),
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: _scripResponse?.model ?? '',
+                                  style: const TextStyle(color: Colors.green),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        //
+                        // Asset serial number
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 16),
+                          child: RichText(
+                            text: TextSpan(
+                              text: "Serial number:\n",
+                              style: const TextStyle(
+                                  color: Colors.black, fontSize: 22),
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: _scripResponse?.serialNumber ?? '',
+                                  style: const TextStyle(color: Colors.green),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  //
+                  // Scan again
+                  Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Center(
+                      child: TextButton(
+                        child: const Text(
+                          'Scan again',
+                          style: TextStyle(fontSize: 24),
+                        ),
+                        onPressed: () {
+                          setState(
+                            () {
+                              _showQRScanner = true;
+                              _showData = false;
+                            },
+                          );
+                        },
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
         ],
       ),
     );
