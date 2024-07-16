@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iv_docs/qr_scanner.dart';
 
@@ -47,8 +46,7 @@ class _InitialPageState extends State<InitialPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                          const QrScanner(readOnly: true),
+                          builder: (context) => const QrScanner(readOnly: true),
                         ),
                       );
                     },
