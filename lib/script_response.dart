@@ -19,10 +19,12 @@ class ScriptResponse {
     return ScriptResponse(
       status: json['status'],
       message: json['message'],
-      team: json['team'],
-      name: json['name'],
-      model: json['model'],
-      serialNumber: json['serialNumber'],
+      team: json['team'] == 'Team' ? null : json['team'],
+      name: json['name'] == 'Assigned User' ? null : json['name'],
+      model: json['model'] == 'Model' ? null : json['model'],
+      serialNumber: json['serialNumber'] == 'Serial\n Number'
+          ? null
+          : json['serialNumber'],
     );
   }
 }

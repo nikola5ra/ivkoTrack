@@ -15,13 +15,12 @@ class _InitialPageState extends State<InitialPage> {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          Image.asset(
-            'assets/bg.png',
-            fit: BoxFit.cover,
-          ),
           Container(
-            color:
-                Colors.black.withOpacity(0.7), // Dark overlay with 50% opacity
+            color: Colors.black.withOpacity(0.7),
+            child: Image.asset(
+              'assets/bg.png',
+              fit: BoxFit.cover,
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -38,53 +37,56 @@ class _InitialPageState extends State<InitialPage> {
                 ),
               ),
               const Spacer(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const QrScanner(readOnly: true),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const QrScanner(readOnly: false),
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green, // Background color
+                          foregroundColor: Colors.white, // Text color
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 15),
                         ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue, // Background color
-                      foregroundColor: Colors.white, // Text color
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 15),
-                    ),
-                    child: const Text(
-                      'Quick Scan',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ),
-                  const SizedBox(width: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              const QrScanner(readOnly: false),
+                        child: const Text(
+                          'Inventory Scan',
+                          style: TextStyle(fontSize: 20),
                         ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green, // Background color
-                      foregroundColor: Colors.white, // Text color
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 15),
-                    ),
-                    child: const Text(
-                      'Inventory Scan',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ),
-                ],
-              ),
+                      ),
+                      const SizedBox(width: 20),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const QrScanner(readOnly: true),
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue, // Background color
+                          foregroundColor: Colors.white, // Text color
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 15),
+                        ),
+                        child: const Text(
+                          'Quick Scan',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  )),
               const Spacer(), // This will create space below the buttons
               const Padding(
                 padding: EdgeInsets.only(bottom: 16.0),
